@@ -1,12 +1,12 @@
 resource "aws_cognito_user_pool" "ctf_pool" {
-  name               = "CognitoCTF-${var.cgid}"
+  name = "CognitoCTF-${var.cgid}"
   account_recovery_setting {
     recovery_mechanism {
-        name     = "verified_email"
-        priority = 1
-      }
+      name     = "verified_email"
+      priority = 1
+    }
   }
-  
+
   lambda_config {
     post_confirmation = aws_lambda_function.test_lambda.arn
   }
@@ -26,38 +26,38 @@ resource "aws_cognito_user_pool" "ctf_pool" {
   }
 
   schema {
-      name         = "access"
-      mutable      = true
-      attribute_data_type = "String"
-}
+    name                = "access"
+    mutable             = true
+    attribute_data_type = "String"
+  }
 
-schema {
-      name         = "email"
-      required     = true
-      attribute_data_type = "String"
-}
+  schema {
+    name                = "email"
+    required            = true
+    attribute_data_type = "String"
+  }
 
-schema {
-      name         = "given_name"
-      required     = true
-      attribute_data_type = "String"
-}
-    
-schema {
-      name         = "family_name"
-      required     = true
-      attribute_data_type = "String"
-}
+  schema {
+    name                = "given_name"
+    required            = true
+    attribute_data_type = "String"
+  }
+
+  schema {
+    name                = "family_name"
+    required            = true
+    attribute_data_type = "String"
+  }
 
 
   password_policy {
-      minimum_length            = 8
-      require_uppercase         = true
-      require_lowercase         = true
-      require_numbers           = true
-      require_symbols           = true
-      temporary_password_validity_days = 7
-    }
+    minimum_length                   = 8
+    require_uppercase                = true
+    require_lowercase                = true
+    require_numbers                  = true
+    require_symbols                  = true
+    temporary_password_validity_days = 7
+  }
 
   username_attributes = ["email"]
 
@@ -66,6 +66,11 @@ schema {
   }
 
   mfa_configuration = "OFF"
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "65f7ed94-ddc9-4ced-8a63-5e7483d21d52"
+  }
 }
 
 /*resource "aws_cognito_user_pool_domain" "cgnito-domain" {
@@ -75,28 +80,28 @@ schema {
 
 
 resource "aws_cognito_user_pool_client" "cognito_client" {
-  explicit_auth_flows = ["ALLOW_REFRESH_TOKEN_AUTH","ALLOW_CUSTOM_AUTH","ALLOW_USER_SRP_AUTH","ALLOW_USER_PASSWORD_AUTH"]
-  auth_session_validity = 3
+  explicit_auth_flows    = ["ALLOW_REFRESH_TOKEN_AUTH", "ALLOW_CUSTOM_AUTH", "ALLOW_USER_SRP_AUTH", "ALLOW_USER_PASSWORD_AUTH"]
+  auth_session_validity  = 3
   refresh_token_validity = 30
-  access_token_validity = 60
-  id_token_validity = 60
+  access_token_validity  = 60
+  id_token_validity      = 60
   token_validity_units {
     refresh_token = "days"
-    access_token = "minutes"
-    id_token = "minutes"
+    access_token  = "minutes"
+    id_token      = "minutes"
   }
-  enable_token_revocation = true
-  prevent_user_existence_errors = "ENABLED"
-  allowed_oauth_flows = ["code"]
-  allowed_oauth_scopes = ["openid","phone","email"]
-  supported_identity_providers = ["COGNITO"]
-  callback_urls = ["https://example.com/"]
+  enable_token_revocation              = true
+  prevent_user_existence_errors        = "ENABLED"
+  allowed_oauth_flows                  = ["code"]
+  allowed_oauth_scopes                 = ["openid", "phone", "email"]
+  supported_identity_providers         = ["COGNITO"]
+  callback_urls                        = ["https://example.com/"]
   allowed_oauth_flows_user_pool_client = true
-  name = "CognitoClient-${var.cgid}"
-  user_pool_id = aws_cognito_user_pool.ctf_pool.id
-  generate_secret = false
-  read_attributes = ["address","birthdate","custom:access","email","email_verified","family_name","gender","given_name","locale","middle_name","name","nickname","phone_number","phone_number_verified","picture","preferred_username","profile","updated_at","website","zoneinfo"]
-  write_attributes = ["address","birthdate","custom:access","email","family_name","gender","given_name","locale","middle_name","name","nickname","phone_number","picture","preferred_username","profile","updated_at","website","zoneinfo"]
+  name                                 = "CognitoClient-${var.cgid}"
+  user_pool_id                         = aws_cognito_user_pool.ctf_pool.id
+  generate_secret                      = false
+  read_attributes                      = ["address", "birthdate", "custom:access", "email", "email_verified", "family_name", "gender", "given_name", "locale", "middle_name", "name", "nickname", "phone_number", "phone_number_verified", "picture", "preferred_username", "profile", "updated_at", "website", "zoneinfo"]
+  write_attributes                     = ["address", "birthdate", "custom:access", "email", "family_name", "gender", "given_name", "locale", "middle_name", "name", "nickname", "phone_number", "picture", "preferred_username", "profile", "updated_at", "website", "zoneinfo"]
 }
 
 resource "aws_cognito_identity_pool" "main" {
@@ -110,6 +115,11 @@ resource "aws_cognito_identity_pool" "main" {
     server_side_token_check = false
   }
 
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "16ba8944-87e7-47f5-8e6a-13e407e664ce"
+  }
 }
 
 
@@ -138,6 +148,11 @@ resource "aws_iam_role" "authenticated" {
   ]
 }
 EOF
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "4447118b-6c40-4a58-98d3-b52158c402ca"
+  }
 }
 
 resource "aws_iam_role_policy" "authenticated" {

@@ -7,8 +7,13 @@ locals {
 
 resource "aws_s3_bucket" "codepipeline_bucket" {
   bucket        = "codepipeline-bucket-${local.bucket_suffix}"
-  acl           = "private" 
+  acl           = "private"
   force_destroy = true
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "462be409-ec8e-40d3-a3c2-6364e35b1093"
+  }
 }
 
 resource "aws_iam_role" "codepipeline" {
@@ -28,6 +33,11 @@ resource "aws_iam_role" "codepipeline" {
   ]
 }
 EOF
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "8ece4751-4dd9-4c18-9d8b-17220d617074"
+  }
 }
 
 resource "aws_iam_role_policy" "codepipeline" {
@@ -137,5 +147,10 @@ resource "aws_codepipeline" "codepipeline" {
         ProjectName = aws_codebuild_project.deploy-lambda.name
       }
     }
+  }
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "413cef17-0548-45aa-9378-85075b600eed"
   }
 }

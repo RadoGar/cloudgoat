@@ -16,7 +16,7 @@ data "aws_iam_policy_document" "cloudtrail_role_inline_policy" {
       "logs:PutLogEvents",
     ]
 
-    resources = ["arn:aws:logs:*:${data.aws_caller_identity.aws-account-id.account_id}:log-group:${aws_cloudwatch_log_group.main.name}:log-stream:*",]
+    resources = ["arn:aws:logs:*:${data.aws_caller_identity.aws-account-id.account_id}:log-group:${aws_cloudwatch_log_group.main.name}:log-stream:*", ]
   }
 }
 
@@ -29,6 +29,11 @@ resource "aws_iam_role" "cloudtrail_role" {
     name   = "policy-8675309"
     policy = data.aws_iam_policy_document.cloudtrail_role_inline_policy.json
   }
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "335e03d7-5a39-4331-bd60-e74b313816d6"
+  }
 }
 
 resource "aws_cloudtrail" "cloudgoat_trail" {
@@ -36,19 +41,29 @@ resource "aws_cloudtrail" "cloudgoat_trail" {
   s3_bucket_name                = aws_s3_bucket.cloudtrail_logs.id
   s3_key_prefix                 = "prefix"
   include_global_service_events = true
-  is_multi_region_trail = true
+  is_multi_region_trail         = true
   event_selector {
     read_write_type           = "All"
     include_management_events = true
   }
   // CloudTrail requires the Log Stream wildcard for the parameter below
   cloud_watch_logs_group_arn = "${aws_cloudwatch_log_group.main.arn}:*"
-  cloud_watch_logs_role_arn = aws_iam_role.cloudtrail_role.arn
+  cloud_watch_logs_role_arn  = aws_iam_role.cloudtrail_role.arn
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "7bb9c6cc-734d-4ffc-aab0-9a9124bc7c16"
+  }
 }
 
 resource "aws_s3_bucket" "cloudtrail_logs" {
   bucket        = "cloudgoat-cloudtrail-logs-${replace(var.cgid, "_", "-")}"
   force_destroy = true
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "deeac0da-279d-4b63-8a5f-186ef65bd000"
+  }
 }
 
 resource "aws_s3_bucket_policy" "allow_access_from_another_account" {

@@ -4,7 +4,10 @@ resource "aws_vpc" "vpc" {
   enable_dns_hostnames = true
 
   tags = {
-    "Name" = "cg-${var.scenario-name}-${var.cgid}-main"
+    "Name"    = "cg-${var.scenario-name}-${var.cgid}-main"
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "fad82cd4-8768-4b44-be83-2351c66c6de4"
   }
 }
 
@@ -12,7 +15,10 @@ resource "aws_internet_gateway" "internet_gateway" {
   vpc_id = aws_vpc.vpc.id
 
   tags = {
-    "Name" = "cg-${var.scenario-name}-${var.cgid}-main"
+    "Name"    = "cg-${var.scenario-name}-${var.cgid}-main"
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "b8176822-3a6e-4ed8-aa3f-b000c938873a"
   }
 }
 
@@ -22,7 +28,10 @@ resource "aws_subnet" "public" {
   cidr_block        = "10.0.1.0/24"
 
   tags = {
-    "Name" = "cg-${var.scenario-name}-${var.cgid}-public"
+    "Name"    = "cg-${var.scenario-name}-${var.cgid}-public"
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "1aee1d50-051d-4569-b528-e0174fc528b8"
   }
 }
 
@@ -35,7 +44,10 @@ resource "aws_route_table" "public" {
   }
 
   tags = {
-    "Name" = "cg-${var.scenario-name}-${var.cgid}-public"
+    "Name"    = "cg-${var.scenario-name}-${var.cgid}-public"
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "22f9cb40-ba8a-45ff-a1b7-c20d0a36513a"
   }
 }
 
@@ -70,6 +82,9 @@ resource "aws_security_group" "ecs_sg" {
   }
 
   tags = {
-    "Name" = "cg-${var.scenario-name}-${var.cgid}-ecs-sg"
+    "Name"    = "cg-${var.scenario-name}-${var.cgid}-ecs-sg"
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "673328c5-4674-426c-84b3-784ffdeaebd1"
   }
 }

@@ -16,6 +16,11 @@ resource "aws_iam_role" "iam_for_lambda" {
   ]
 }
 EOF
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "a28f4084-21c2-4105-b3fe-d68911ad92b5"
+  }
 }
 
 resource "aws_iam_policy" "cognito-policy" {
@@ -37,6 +42,11 @@ resource "aws_iam_policy" "cognito-policy" {
   ]
 }
 EOF
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "7543c66f-cb89-4b38-b25c-09dc7f72882a"
+  }
 }
 
 resource "aws_iam_role_policy_attachment" "lambda-role" {
@@ -64,6 +74,11 @@ resource "aws_lambda_function" "test_lambda" {
     variables = {
       foo = "bar"
     }
+  }
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "1943f495-b92e-4528-a951-67c8cb53fbdd"
   }
 }
 

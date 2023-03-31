@@ -3,6 +3,9 @@ resource "aws_iam_user" "bilbo" {
   name = "cg-bilbo-${var.cgid}"
   tags = {
     deployment_profile = "${var.profile}"
+    git_org            = "RadoGar"
+    git_repo           = "cloudgoat"
+    yor_trace          = "acef48cf-ce26-48a2-a4b7-7ca3d95a54fa"
   }
   provisioner "local-exec" {
     when    = destroy
@@ -54,27 +57,27 @@ resource "aws_iam_role" "cg-lambda-invoker" {
       Version = "2012-10-17"
       Statement = [
         {
-          Action   = [
+          Action = [
             "lambda:ListFunctionEventInvokeConfigs",
             "lambda:InvokeFunction",
             "lambda:ListTags",
             "lambda:GetFunction",
             "lambda:GetPolicy"
-            ]
-          Effect   = "Allow"
+          ]
+          Effect = "Allow"
           Resource = [
             aws_lambda_function.policy_applier_lambda1.arn,
             aws_lambda_function.policy_applier_lambda1.arn
           ]
         },
         {
-          Action   = [
+          Action = [
             "lambda:ListFunctions",
             "iam:Get*",
             "iam:List*",
             "iam:SimulateCustomPolicy",
             "iam:SimulatePrincipalPolicy"
-            ]
+          ]
           Effect   = "Allow"
           Resource = "*"
         }
@@ -90,12 +93,17 @@ resource "aws_iam_role" "cg-lambda-invoker" {
         Effect = "Allow"
         Sid    = ""
         Principal = {
-          "AWS": [
+          "AWS" : [
             aws_iam_user.bilbo.arn
           ]
         }
       },
     ]
   })
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "5f510f4e-5c38-45a8-bdfa-1211892180a6"
+  }
 }
 

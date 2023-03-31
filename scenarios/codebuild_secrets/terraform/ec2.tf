@@ -1,6 +1,6 @@
 #IAM Role
 resource "aws_iam_role" "cg-ec2-role" {
-  name = "cg-ec2-role-${var.cgid}"
+  name               = "cg-ec2-role-${var.cgid}"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -17,16 +17,19 @@ resource "aws_iam_role" "cg-ec2-role" {
 }
 EOF
   tags = {
-      Name = "cg-ec2-role-${var.cgid}"
-      Stack = "${var.stack-name}"
-      Scenario = "${var.scenario-name}"
+    Name      = "cg-ec2-role-${var.cgid}"
+    Stack     = "${var.stack-name}"
+    Scenario  = "${var.scenario-name}"
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "8afab343-5baa-4c04-a3bd-324aac797c47"
   }
 }
 #Iam Role Policy
 resource "aws_iam_policy" "cg-ec2-role-policy" {
-  name = "cg-ec2-role-policy-${var.cgid}"
+  name        = "cg-ec2-role-policy-${var.cgid}"
   description = "cg-ec2-role-policy-${var.cgid}"
-  policy = <<POLICY
+  policy      = <<POLICY
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -43,12 +46,17 @@ resource "aws_iam_policy" "cg-ec2-role-policy" {
     ]
 }
 POLICY
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "3893403d-a0b9-48d6-8001-a73ea8011d93"
+  }
 }
 #IAM Role Policy Attachment
 resource "aws_iam_policy_attachment" "cg-ec2-role-policy-attachment" {
   name = "cg-ec2-role-policy-attachment-${var.cgid}"
   roles = [
-      "${aws_iam_role.cg-ec2-role.name}"
+    "${aws_iam_role.cg-ec2-role.name}"
   ]
   policy_arn = "${aws_iam_policy.cg-ec2-role-policy.arn}"
 }
@@ -56,54 +64,67 @@ resource "aws_iam_policy_attachment" "cg-ec2-role-policy-attachment" {
 resource "aws_iam_instance_profile" "cg-ec2-instance-profile" {
   name = "cg-ec2-instance-profile-${var.cgid}"
   role = "${aws_iam_role.cg-ec2-role.name}"
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "d07f711e-00e0-4f79-a9e0-ba245615341e"
+  }
 }
 #Security Groups
 resource "aws_security_group" "cg-ec2-ssh-security-group" {
-  name = "cg-ec2-ssh-${var.cgid}"
+  name        = "cg-ec2-ssh-${var.cgid}"
   description = "CloudGoat ${var.cgid} Security Group for EC2 Instance over SSH"
-  vpc_id = "${aws_vpc.cg-vpc.id}"
+  vpc_id      = "${aws_vpc.cg-vpc.id}"
   ingress {
-      from_port = 22
-      to_port = 22
-      protocol = "tcp"
-      cidr_blocks = var.cg_whitelist
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = var.cg_whitelist
   }
   egress {
-      from_port = 0
-      to_port = 0
-      protocol = "-1"
-      cidr_blocks = [
-          "0.0.0.0/0"
-      ]
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
+    cidr_blocks = [
+      "0.0.0.0/0"
+    ]
   }
   tags = {
-    Name = "cg-ec2-ssh-${var.cgid}"
-    Stack = "${var.stack-name}"
-    Scenario = "${var.scenario-name}"
+    Name      = "cg-ec2-ssh-${var.cgid}"
+    Stack     = "${var.stack-name}"
+    Scenario  = "${var.scenario-name}"
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "6ad97166-1e74-4161-af94-2a7d7b81c3d2"
   }
 }
 #AWS Key Pair
 resource "aws_key_pair" "cg-ec2-key-pair" {
-  key_name = "cg-ec2-key-pair-${var.cgid}"
+  key_name   = "cg-ec2-key-pair-${var.cgid}"
   public_key = "${file(var.ssh-public-key-for-ec2)}"
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "fc1df3e9-2708-4860-9036-f62d0caafb15"
+  }
 }
 #EC2 Instance
 resource "aws_instance" "cg-ubuntu-ec2" {
-    ami = "ami-0a313d6098716f372"
-    instance_type = "t2.micro"
-    iam_instance_profile = "${aws_iam_instance_profile.cg-ec2-instance-profile.name}"
-    subnet_id = "${aws_subnet.cg-public-subnet-1.id}"
-    associate_public_ip_address = true
-    vpc_security_group_ids = [
-        "${aws_security_group.cg-ec2-ssh-security-group.id}"
-    ]
-    key_name = "${aws_key_pair.cg-ec2-key-pair.key_name}"
-    root_block_device {
-        volume_type = "gp2"
-        volume_size = 8
-        delete_on_termination = true
-    }
-    user_data = <<-EOF
+  ami                         = "ami-0a313d6098716f372"
+  instance_type               = "t2.micro"
+  iam_instance_profile        = "${aws_iam_instance_profile.cg-ec2-instance-profile.name}"
+  subnet_id                   = "${aws_subnet.cg-public-subnet-1.id}"
+  associate_public_ip_address = true
+  vpc_security_group_ids = [
+    "${aws_security_group.cg-ec2-ssh-security-group.id}"
+  ]
+  key_name = "${aws_key_pair.cg-ec2-key-pair.key_name}"
+  root_block_device {
+    volume_type           = "gp2"
+    volume_size           = 8
+    delete_on_termination = true
+  }
+  user_data = <<-EOF
         #!/bin/bash
         apt-get update
         apt-get install -y postgresql-client
@@ -114,14 +135,17 @@ resource "aws_instance" "cg-ubuntu-ec2" {
         psql postgresql://${var.rds-username}:${var.rds-password}@${aws_db_instance.cg-psql-rds.endpoint}/${var.rds-database-name} \
         -c "INSERT INTO sensitive_information (name,value) VALUES ('Key2','V\!C70RY-JpZFReKtvUiWuhyPGF20m4SDYJtOTxws6');"
         EOF
-    volume_tags = {
-        Name = "CloudGoat ${var.cgid} EC2 Instance Root Device"
-        Stack = "${var.stack-name}"
-        Scenario = "${var.scenario-name}"
-    }
-    tags = {
-        Name = "cg-ubuntu-ec2-${var.cgid}"
-        Stack = "${var.stack-name}"
-        Scenario = "${var.scenario-name}"
-    }
+  volume_tags = {
+    Name     = "CloudGoat ${var.cgid} EC2 Instance Root Device"
+    Stack    = "${var.stack-name}"
+    Scenario = "${var.scenario-name}"
+  }
+  tags = {
+    Name      = "cg-ubuntu-ec2-${var.cgid}"
+    Stack     = "${var.stack-name}"
+    Scenario  = "${var.scenario-name}"
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "0e97ea8e-d461-41c1-9680-ac2be58d7417"
+  }
 }

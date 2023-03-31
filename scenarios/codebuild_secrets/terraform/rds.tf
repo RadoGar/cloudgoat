@@ -1,75 +1,93 @@
 #Security Group
 resource "aws_security_group" "cg-rds-security-group" {
-  name = "cg-rds-psql-${var.cgid}"
+  name        = "cg-rds-psql-${var.cgid}"
   description = "CloudGoat ${var.cgid} Security Group for PostgreSQL RDS Instance"
-  vpc_id = "${aws_vpc.cg-vpc.id}"
+  vpc_id      = "${aws_vpc.cg-vpc.id}"
   ingress {
-      from_port = 5432
-      to_port = 5432
-      protocol = "tcp"
-      cidr_blocks = [
-          "10.10.10.0/24",
-          "10.10.20.0/24",
-          "10.10.30.0/24",
-          "10.10.40.0/24"
-      ]
+    from_port = 5432
+    to_port   = 5432
+    protocol  = "tcp"
+    cidr_blocks = [
+      "10.10.10.0/24",
+      "10.10.20.0/24",
+      "10.10.30.0/24",
+      "10.10.40.0/24"
+    ]
   }
   ingress {
-      from_port = 5432
-      to_port = 5432
-      protocol = "tcp"
-      cidr_blocks = var.cg_whitelist
+    from_port   = 5432
+    to_port     = 5432
+    protocol    = "tcp"
+    cidr_blocks = var.cg_whitelist
   }
   egress {
-      from_port = 0
-      to_port = 0
-      protocol = "-1"
-      cidr_blocks = [
-          "0.0.0.0/0"
-      ]
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
+    cidr_blocks = [
+      "0.0.0.0/0"
+    ]
+  }
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "b28b33f3-d283-4d7c-b7f1-15622403a1e0"
   }
 }
 #RDS Subnet Group
 resource "aws_db_subnet_group" "cg-rds-subnet-group" {
   name = "cloud-goat-rds-subnet-group-${var.cgid}"
   subnet_ids = [
-      "${aws_subnet.cg-private-subnet-1.id}",
-      "${aws_subnet.cg-private-subnet-2.id}"
+    "${aws_subnet.cg-private-subnet-1.id}",
+    "${aws_subnet.cg-private-subnet-2.id}"
   ]
   description = "CloudGoat ${var.cgid} Subnet Group"
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "dcf7cfb9-8a52-4930-936a-5efb4f6ced52"
+  }
 }
 resource "aws_db_subnet_group" "cg-rds-testing-subnet-group" {
   name = "cloud-goat-rds-testing-subnet-group-${var.cgid}"
   subnet_ids = [
-      "${aws_subnet.cg-public-subnet-1.id}",
-      "${aws_subnet.cg-public-subnet-2.id}"
+    "${aws_subnet.cg-public-subnet-1.id}",
+    "${aws_subnet.cg-public-subnet-2.id}"
   ]
   description = "CloudGoat ${var.cgid} Subnet Group ONLY for Testing with Public Subnets"
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "e510d9f9-db5a-415a-a9a4-4a6059f71992"
+  }
 }
 #RDS PostgreSQL Instance
 resource "aws_db_instance" "cg-psql-rds" {
-  identifier = "cg-rds-instance-${local.cgid_suffix}"
-  engine = "postgres"
-  engine_version = "13.7"
-  port = "5432"
-  instance_class = "db.m5.large"
+  identifier           = "cg-rds-instance-${local.cgid_suffix}"
+  engine               = "postgres"
+  engine_version       = "13.7"
+  port                 = "5432"
+  instance_class       = "db.m5.large"
   db_subnet_group_name = "${aws_db_subnet_group.cg-rds-subnet-group.id}"
-  multi_az = false
-  username = "${var.rds-username}"
-  password = "${var.rds-password}"
-  publicly_accessible = false
+  multi_az             = false
+  username             = "${var.rds-username}"
+  password             = "${var.rds-password}"
+  publicly_accessible  = false
   vpc_security_group_ids = [
     "${aws_security_group.cg-rds-security-group.id}"
   ]
-  storage_type = "gp2"
-  allocated_storage = 20
-  name = "${var.rds-database-name}"
-  apply_immediately = true
+  storage_type        = "gp2"
+  allocated_storage   = 20
+  name                = "${var.rds-database-name}"
+  apply_immediately   = true
   skip_final_snapshot = true
 
   tags = {
-      Name = "cg-rds-instance-${var.cgid}"
-      Stack = "${var.stack-name}"
-      Scenario = "${var.scenario-name}"
+    Name      = "cg-rds-instance-${var.cgid}"
+    Stack     = "${var.stack-name}"
+    Scenario  = "${var.scenario-name}"
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "f6b6333e-22cb-46f5-adf8-43acfa7652d0"
   }
 }
