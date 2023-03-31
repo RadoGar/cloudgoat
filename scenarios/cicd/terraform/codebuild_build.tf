@@ -22,6 +22,11 @@ resource "aws_codebuild_project" "build-docker-image" {
     type     = "CODECOMMIT"
     location = aws_codecommit_repository.code.clone_url_http
   }
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "a3c3052e-0708-4b4f-a7ef-76ef84f034cc"
+  }
 }
 
 
@@ -42,6 +47,11 @@ resource "aws_iam_role" "build-docker-image" {
   ]
 }
 EOF
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "e39158f6-942f-45c4-b9f2-ff4dc6250da0"
+  }
 }
 
 resource "aws_iam_role_policy" "build-docker-image" {

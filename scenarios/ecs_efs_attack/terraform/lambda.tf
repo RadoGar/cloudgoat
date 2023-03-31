@@ -19,12 +19,12 @@ resource "aws_iam_role_policy_attachment" "cg-lambda-policy3" {
 # A lambda function connected to an EFS file system
 resource "aws_lambda_function" "efs_upload" {
 
-  filename      = "../assets/efs_upload.zip"
-  function_name = "cg-efs_upload-${var.cgid}"
-  role          = "${aws_iam_role.cg-lambda-role.arn}"
-  handler       = "lambda_function.lambda_handler"
+  filename         = "../assets/efs_upload.zip"
+  function_name    = "cg-efs_upload-${var.cgid}"
+  role             = "${aws_iam_role.cg-lambda-role.arn}"
+  handler          = "lambda_function.lambda_handler"
   source_code_hash = "${filebase64sha256("../assets/efs_upload.zip")}"
-  runtime = "python3.8"
+  runtime          = "python3.8"
 
   file_system_config {
     # EFS file system access point ARN
@@ -42,6 +42,11 @@ resource "aws_lambda_function" "efs_upload" {
   # Explicitly declare dependency on EFS mount target. 
   # When creating or updating Lambda functions, mount target must be in 'available' lifecycle state.
   depends_on = [aws_efs_mount_target.alpha, aws_efs_access_point.admin_access_point]
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "54ee9138-67b9-40aa-96b8-0d0785bf8c30"
+  }
 }
 
 
@@ -54,12 +59,17 @@ resource "aws_cloudwatch_event_rule" "cg_insert_file_every_three_minutes" {
   name                = "cg_every_three_minutes_${var.cgid}"
   description         = "Fires every_three_minutes"
   schedule_expression = "rate(3 minutes)"
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "f6689d77-0aae-44eb-97a7-80eeca2fbe0c"
+  }
 }
 
 resource "aws_cloudwatch_event_target" "cg_check_insert_file_every_three_minutes" {
   rule      = "${aws_cloudwatch_event_rule.cg_insert_file_every_three_minutes.name}"
   target_id = "lambda"
-  input = "{\"fname\": \"flag.txt\", \"text\":\"RmxhZzoge3todHRwczovL3lvdXR1LmJlL2RRdzR3OVdnWGNRfX0=\"}"
+  input     = "{\"fname\": \"flag.txt\", \"text\":\"RmxhZzoge3todHRwczovL3lvdXR1LmJlL2RRdzR3OVdnWGNRfX0=\"}"
   arn       = "${aws_lambda_function.efs_upload.arn}"
 }
 
@@ -73,7 +83,7 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_call_insert_lambda" {
 
 # # Invoke the lambda function
 # data "aws_lambda_invocation" "efs_upload_invoke" {
-  
+
 #   depends_on = [aws_lambda_function.efs_upload, aws_efs_access_point.admin_access_point]
 #   function_name = "${aws_lambda_function.efs_upload.function_name}"
 

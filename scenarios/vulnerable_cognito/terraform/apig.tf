@@ -32,6 +32,11 @@ resource "aws_iam_policy" "s3_policy" {
     ]
 }
 EOF
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "9466a446-10f1-47e8-9497-3461c5503d41"
+  }
 }
 
 # Create API Gateway Role
@@ -54,6 +59,11 @@ resource "aws_iam_role" "s3_api_gateyway_role" {
   ]
 } 
   EOF
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "39d20380-b5d5-48ca-a815-cb57d4c47f66"
+  }
 }
 
 # Attach S3 Access Policy to the API Gateway Role
@@ -65,6 +75,11 @@ resource "aws_iam_role_policy_attachment" "s3_policy_attach" {
 resource "aws_api_gateway_rest_api" "MyS3" {
   name        = "VulnerableCognito"
   description = "API for S3 Integration"
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "1bee0039-1fe8-4f85-a133-dd13498ca869"
+  }
 }
 
 resource "aws_api_gateway_resource" "Folder" {
@@ -102,7 +117,7 @@ resource "aws_api_gateway_method" "GetBucketItem" {
   http_method   = "GET"
   authorization = "NONE"
   request_parameters = {
-    "method.request.path.item" = true
+    "method.request.path.item"   = true
     "method.request.path.folder" = true
   }
 }
@@ -139,10 +154,10 @@ resource "aws_api_gateway_integration" "S3FolderIntegration" {
   credentials = "${aws_iam_role.s3_api_gateyway_role.arn}"
 
   request_parameters = {
-        "integration.request.path.bucket" = "method.request.path.folder"
-    }
+    "integration.request.path.bucket" = "method.request.path.folder"
+  }
 
-  passthrough_behavior    = "WHEN_NO_MATCH"
+  passthrough_behavior = "WHEN_NO_MATCH"
 
 }
 
@@ -160,11 +175,11 @@ resource "aws_api_gateway_integration" "S3ItemIntegration" {
   uri         = "arn:aws:apigateway:${var.region}:s3:path/{bucket}/{object}"
   credentials = "${aws_iam_role.s3_api_gateyway_role.arn}"
   request_parameters = {
-        "integration.request.path.bucket" = "method.request.path.folder"
-        "integration.request.path.object" = "method.request.path.item"
-    }
+    "integration.request.path.bucket" = "method.request.path.folder"
+    "integration.request.path.object" = "method.request.path.item"
+  }
 
-  passthrough_behavior    = "WHEN_NO_MATCH"
+  passthrough_behavior = "WHEN_NO_MATCH"
 }
 
 resource "aws_api_gateway_method_response" "two00" {
@@ -179,9 +194,9 @@ resource "aws_api_gateway_method_response" "two00" {
     "method.response.header.Content-Type"   = true
   }
 
-#  response_models = {
-#    "application/json" = "Empty"
-#  }
+  #  response_models = {
+  #    "application/json" = "Empty"
+  #  }
 }
 
 resource "aws_api_gateway_method_response" "four00" {
@@ -219,10 +234,10 @@ resource "aws_api_gateway_integration_response" "two00IntegrationResponse" {
 
 
 resource "aws_api_gateway_method_response" "two00Folder" {
-  rest_api_id   = "${aws_api_gateway_rest_api.MyS3.id}"
-  resource_id   = "${aws_api_gateway_resource.Folder.id}"
-  http_method   = "${aws_api_gateway_method.GetBucketFolder.http_method}"
-  status_code   = "200"
+  rest_api_id = "${aws_api_gateway_rest_api.MyS3.id}"
+  resource_id = "${aws_api_gateway_resource.Folder.id}"
+  http_method = "${aws_api_gateway_method.GetBucketFolder.http_method}"
+  status_code = "200"
 
   response_parameters = {
     "method.response.header.Timestamp"      = true
@@ -230,16 +245,16 @@ resource "aws_api_gateway_method_response" "two00Folder" {
     "method.response.header.Content-Type"   = true
   }
 
-#  response_models = {
-#    "application/json" = "Empty"
-#  }
+  #  response_models = {
+  #    "application/json" = "Empty"
+  #  }
 }
 
 resource "aws_api_gateway_integration_response" "two00FolderIntegrationResponse" {
-  depends_on = ["aws_api_gateway_integration.S3FolderIntegration"]
-  rest_api_id   = "${aws_api_gateway_rest_api.MyS3.id}"
-  resource_id   = "${aws_api_gateway_resource.Folder.id}"
-  http_method   = "${aws_api_gateway_method.GetBucketFolder.http_method}"
+  depends_on  = ["aws_api_gateway_integration.S3FolderIntegration"]
+  rest_api_id = "${aws_api_gateway_rest_api.MyS3.id}"
+  resource_id = "${aws_api_gateway_resource.Folder.id}"
+  http_method = "${aws_api_gateway_method.GetBucketFolder.http_method}"
   status_code = "${aws_api_gateway_method_response.two00Folder.status_code}"
 
   response_parameters = {
@@ -255,30 +270,30 @@ resource "aws_api_gateway_method_response" "two00Item" {
   rest_api_id = "${aws_api_gateway_rest_api.MyS3.id}"
   resource_id = "${aws_api_gateway_resource.Item.id}"
   http_method = "${aws_api_gateway_method.GetBucketItem.http_method}"
-  status_code   = "200"
+  status_code = "200"
 
   response_parameters = {
-#    "method.response.header.Timestamp"      = true
-#    "method.response.header.Content-Length" = true
-    "method.response.header.Content-Type"   = true
+    #    "method.response.header.Timestamp"      = true
+    #    "method.response.header.Content-Length" = true
+    "method.response.header.Content-Type" = true
   }
 
-#  response_models = {
-#    "application/json" = "Empty"
-#  }
+  #  response_models = {
+  #    "application/json" = "Empty"
+  #  }
 }
 
 resource "aws_api_gateway_integration_response" "two00ItemIntegrationResponse" {
-  depends_on = ["aws_api_gateway_integration.S3ItemIntegration"]
+  depends_on  = ["aws_api_gateway_integration.S3ItemIntegration"]
   rest_api_id = "${aws_api_gateway_rest_api.MyS3.id}"
   resource_id = "${aws_api_gateway_resource.Item.id}"
   http_method = "${aws_api_gateway_method.GetBucketItem.http_method}"
   status_code = "${aws_api_gateway_method_response.two00Item.status_code}"
 
   response_parameters = {
-#    "method.response.header.Timestamp"      = "integration.response.header.Date"
-#    "method.response.header.Content-Length" = "integration.response.header.Content-Length"
-    "method.response.header.Content-Type"   = "integration.response.header.Content-Type"
+    #    "method.response.header.Timestamp"      = "integration.response.header.Date"
+    #    "method.response.header.Content-Length" = "integration.response.header.Content-Length"
+    "method.response.header.Content-Type" = "integration.response.header.Content-Type"
   }
 }
 
@@ -307,9 +322,9 @@ resource "aws_api_gateway_integration_response" "five00IntegrationResponse" {
 }
 
 resource "aws_api_gateway_deployment" "S3APIDeployment" {
-  depends_on  = ["aws_api_gateway_integration.S3Integration","aws_api_gateway_integration.S3FolderIntegration","aws_api_gateway_integration.S3ItemIntegration"]
+  depends_on  = ["aws_api_gateway_integration.S3Integration", "aws_api_gateway_integration.S3FolderIntegration", "aws_api_gateway_integration.S3ItemIntegration"]
   rest_api_id = "${aws_api_gateway_rest_api.MyS3.id}"
-#  stage_name  = "vulncognito"
+  #  stage_name  = "vulncognito"
 }
 
 
@@ -317,6 +332,11 @@ resource "aws_api_gateway_stage" "S3APIStage" {
   deployment_id = aws_api_gateway_deployment.S3APIDeployment.id
   rest_api_id   = aws_api_gateway_rest_api.MyS3.id
   stage_name    = "vulncognito"
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "1932a404-2784-4d7a-8bae-cea6fa2ed724"
+  }
 }
 
 resource "aws_api_gateway_rest_api_policy" "test" {

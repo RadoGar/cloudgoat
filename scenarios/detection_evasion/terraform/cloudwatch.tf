@@ -1,7 +1,10 @@
 resource "aws_cloudwatch_log_group" "main" {
   name = "cg_detection_evasion_logs"
   tags = {
-    tag-key = var.cgid
+    tag-key   = var.cgid
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "f0c47d4b-e454-48d6-8ff8-3efe5f08f4c3"
   }
 }
 
@@ -12,29 +15,34 @@ resource "aws_cloudwatch_log_metric_filter" "honeytoken_is_used" {
   log_group_name = aws_cloudwatch_log_group.main.name
 
   metric_transformation {
-    name      = "honeytoken_is_used"
-    namespace = "cloudgoat_detection_evasion"
-    value     = "1"
+    name          = "honeytoken_is_used"
+    namespace     = "cloudgoat_detection_evasion"
+    value         = "1"
     default_value = "0"
   }
 }
 
 resource "aws_cloudwatch_metric_alarm" "honeytoken_alarm" {
-  alarm_name                = "honeytoken_alarm"
-  comparison_operator       = "GreaterThanOrEqualToThreshold"
-  metric_name               = "honeytoken_is_used"
-  namespace                 = "cloudgoat_detection_evasion"
+  alarm_name          = "honeytoken_alarm"
+  comparison_operator = "GreaterThanOrEqualToThreshold"
+  metric_name         = "honeytoken_is_used"
+  namespace           = "cloudgoat_detection_evasion"
 
-  period                    = "60"
-  evaluation_periods        = "1"
-  threshold                 = "1"
-  datapoints_to_alarm        = "1"
+  period              = "60"
+  evaluation_periods  = "1"
+  threshold           = "1"
+  datapoints_to_alarm = "1"
 
   statistic                 = "Sum"
   alarm_description         = "Alerts on the usage of honeytokens"
   insufficient_data_actions = []
-  actions_enabled = "true"
-  alarm_actions = [aws_sns_topic.honeytoken_detected.arn]
+  actions_enabled           = "true"
+  alarm_actions             = [aws_sns_topic.honeytoken_detected.arn]
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "e82e4118-85a0-42ef-9e18-0cd11176da9c"
+  }
 }
 
 // resources for detecting/alerting on abnormal instance_profile usage
@@ -44,27 +52,32 @@ resource "aws_cloudwatch_log_metric_filter" "instance_profile_abnormal_usage" {
   log_group_name = aws_cloudwatch_log_group.main.name
 
   metric_transformation {
-    name      = "instance_profile_abnormal_usage"
-    namespace = "cloudgoat_detection_evasion"
-    value     = "1"
+    name          = "instance_profile_abnormal_usage"
+    namespace     = "cloudgoat_detection_evasion"
+    value         = "1"
     default_value = "0"
   }
 }
 
 resource "aws_cloudwatch_metric_alarm" "instance_profile_alarm" {
-  alarm_name                = "instance_profile_alarm"
-  comparison_operator       = "GreaterThanOrEqualToThreshold"
-  metric_name               = "instance_profile_abnormal_usage"
-  namespace                 = "cloudgoat_detection_evasion"
+  alarm_name          = "instance_profile_alarm"
+  comparison_operator = "GreaterThanOrEqualToThreshold"
+  metric_name         = "instance_profile_abnormal_usage"
+  namespace           = "cloudgoat_detection_evasion"
 
-  period                    = "60"
-  evaluation_periods        = "1"
-  threshold                 = "1"
-  datapoints_to_alarm        = "1"
+  period              = "60"
+  evaluation_periods  = "1"
+  threshold           = "1"
+  datapoints_to_alarm = "1"
 
   statistic                 = "Sum"
   alarm_description         = "Alarms on the usage of instance_profile credentials from an IP other than that of the ec2 instance associated with the profile."
   insufficient_data_actions = []
-  actions_enabled = "true"
-  alarm_actions = [aws_sns_topic.instance_profile_abnormally_used.arn]
+  actions_enabled           = "true"
+  alarm_actions             = [aws_sns_topic.instance_profile_abnormally_used.arn]
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "c53298f6-7b0e-4526-8f58-ac536775e639"
+  }
 }

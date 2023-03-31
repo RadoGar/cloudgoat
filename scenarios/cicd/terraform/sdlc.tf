@@ -1,5 +1,10 @@
 resource "aws_codecommit_repository" "code" {
   repository_name = local.repository_name
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "c56a3db5-23be-4c59-81c9-3894b2a16651"
+  }
 }
 
 locals {
@@ -22,13 +27,13 @@ resource "null_resource" "upload_files" {
     on_failure  = fail
     interpreter = ["bash", "-c"]
     environment = {
-      AWS_REGION = var.region,
-      AWS_DEFAULT_REGION = var.region
-      AWS_PROFILE = var.profile
+      AWS_REGION          = var.region,
+      AWS_DEFAULT_REGION  = var.region
+      AWS_PROFILE         = var.profile
       AWS_DEFAULT_PROFILE = var.profile
     }
-    
-    command     = <<BASH
+
+    command = <<BASH
     set -e
     cat > "${local.src_path}/buildspec.old.yml" <<EOF
       ${local.vulnerable_file_content}
@@ -56,5 +61,10 @@ BASH
 resource "aws_ecr_repository" "app" {
   name                 = local.ecr_repository_name
   image_tag_mutability = "MUTABLE"
+  tags = {
+    git_org   = "RadoGar"
+    git_repo  = "cloudgoat"
+    yor_trace = "a46ee02e-6c58-4bba-b688-8cd07673930d"
+  }
 }
 
