@@ -56,7 +56,7 @@ resource "aws_db_instance" "cg-psql-rds" {
   port                 = "5432"
   instance_class       = "db.t2.micro"
   db_subnet_group_name = "${aws_db_subnet_group.cg-rds-subnet-group.id}"
-  multi_az             = false
+  multi_az             = true
   username             = "${var.rds-username}"
   password             = "${var.rds-password}"
   publicly_accessible  = false
@@ -77,4 +77,7 @@ resource "aws_db_instance" "cg-psql-rds" {
     git_repo  = "cloudgoat"
     yor_trace = "501c07c4-1c67-4497-b7c0-a128f05ad9ab"
   }
+  auto_minor_version_upgrade = true
+  iam_database_authentication_enabled = true
+  monitoring_interval = true
 }
