@@ -66,5 +66,8 @@ resource "aws_ecr_repository" "app" {
     git_repo  = "cloudgoat"
     yor_trace = "a46ee02e-6c58-4bba-b688-8cd07673930d"
   }
+  image_scanning_configuration {
+    scan_on_push = true
+  }
 }
 
