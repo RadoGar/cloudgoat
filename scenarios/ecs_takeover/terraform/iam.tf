@@ -19,6 +19,7 @@ resource "aws_iam_role" "ecs_agent" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "f6478c49-1815-477d-98c2-cd9f09005790"
+    Owner     = "RGA"
   }
 }
 
@@ -35,6 +36,7 @@ resource "aws_iam_instance_profile" "ecs_agent" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "eef03930-e1a5-4c0c-bb6d-c2af2959521d"
+    Owner     = "RGA"
   }
 }
 
@@ -65,6 +67,7 @@ resource "aws_iam_role" "privd" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "6a12022e-d729-4ed9-8eeb-98e059ab1a26"
+    Owner     = "RGA"
   }
 }
 
@@ -100,5 +103,6 @@ resource "aws_iam_policy" "privd" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "105424a2-286d-4318-a7a5-e0328589de81"
+    Owner     = "RGA"
   }
 }

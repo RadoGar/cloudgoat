@@ -24,6 +24,7 @@ resource "aws_security_group" "cg-lb-http-security-group" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "c3e84de7-2031-445f-8dd1-a4c1ea0e6b6b"
+    Owner     = "RGA"
   }
 }
 #Application Load Balancer
@@ -51,6 +52,7 @@ resource "aws_lb" "cg-lb" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "7746ff63-5dd6-4e5c-884c-6f92e567bc58"
+    Owner     = "RGA"
   }
 }
 #Target Group
@@ -68,6 +70,7 @@ resource "aws_lb_target_group" "cg-target-group" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "b6a1e423-ff76-43e0-8e0b-df9666cf4b15"
+    Owner     = "RGA"
   }
 }
 #Target Group Attachment

@@ -6,6 +6,7 @@ resource "aws_secretsmanager_secret" "easy_secret" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "eb1ba269-f713-48fa-8efa-8c4c9b609dd4"
+    Owner     = "RGA"
   }
 }
 
@@ -22,6 +23,7 @@ resource "aws_secretsmanager_secret" "hard_secret" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "9338e18b-2425-43aa-801a-c7c59df48f58"
+    Owner     = "RGA"
   }
 }
 

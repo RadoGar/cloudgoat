@@ -8,6 +8,7 @@ resource "aws_vpc" "cg-vpc" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "97436344-6979-47f5-b9f9-d95032bbeac1"
+    Owner     = "RGA"
   }
 }
 #Internet Gateway
@@ -20,6 +21,7 @@ resource "aws_internet_gateway" "cg-internet-gateway" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "14208958-81ea-4585-87d8-ca8ac5e6d506"
+    Owner     = "RGA"
   }
 }
 #Public Subnets
@@ -34,6 +36,7 @@ resource "aws_subnet" "cg-public-subnet-1" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "82a3779f-34e9-43ba-866c-75730121fa65"
+    Owner     = "RGA"
   }
 }
 resource "aws_subnet" "cg-public-subnet-2" {
@@ -47,6 +50,7 @@ resource "aws_subnet" "cg-public-subnet-2" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "ec1b5dd3-c2b5-4e8b-9697-a66547254654"
+    Owner     = "RGA"
   }
 }
 #Private Subnets
@@ -61,6 +65,7 @@ resource "aws_subnet" "cg-private-subnet-1" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "21083094-9b4b-474b-84c4-915aafbb0d21"
+    Owner     = "RGA"
   }
 }
 resource "aws_subnet" "cg-private-subnet-2" {
@@ -74,6 +79,7 @@ resource "aws_subnet" "cg-private-subnet-2" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "3a679be0-4a0d-41a9-92f8-5599fffce5d3"
+    Owner     = "RGA"
   }
 }
 #Public Subnet Routing Table
@@ -90,6 +96,7 @@ resource "aws_route_table" "cg-public-subnet-route-table" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "ff940979-f324-4974-b572-fe8d172c2e61"
+    Owner     = "RGA"
   }
 }
 #Private Subnet Routing Table
@@ -102,6 +109,7 @@ resource "aws_route_table" "cg-private-subnet-route-table" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "d3d04cec-3b55-4fcb-a641-675a84646a34"
+    Owner     = "RGA"
   }
 }
 #Public Subnets Routing Associations

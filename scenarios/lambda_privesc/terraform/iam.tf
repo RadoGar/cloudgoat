@@ -8,6 +8,7 @@ resource "aws_iam_user" "cg-chris" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "6ce42ca7-3a9a-44ba-a0e8-cc2d174b00e0"
+    Owner     = "RGA"
   }
 }
 
@@ -40,6 +41,7 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "a9350f0e-55a4-410f-9306-03910d854285"
+    Owner     = "RGA"
   }
 }
 
@@ -67,6 +69,7 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "60ebb875-387a-4602-9868-496c648bb134"
+    Owner     = "RGA"
   }
 }
 
@@ -94,6 +97,7 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "8d0000f3-0573-4f9e-b28e-ff29641d1cac"
+    Owner     = "RGA"
   }
 }
 
@@ -121,6 +125,7 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "93f63d4d-78fb-49b6-9d02-4a07ea71a323"
+    Owner     = "RGA"
   }
 }
 

@@ -5,6 +5,7 @@ resource "aws_sns_topic" "honeytoken_detected" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "2f52123d-1447-405c-aba7-06ee5ad6ac64"
+    Owner     = "RGA"
   }
 }
 
@@ -20,6 +21,7 @@ resource "aws_sns_topic" "instance_profile_abnormally_used" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "d67c15f7-e462-4af2-8fd6-6df88c75f288"
+    Owner     = "RGA"
   }
 }
 

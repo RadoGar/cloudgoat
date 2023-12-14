@@ -23,6 +23,7 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "0b279109-2404-4ef0-a961-80509f243e48"
+    Owner     = "RGA"
   }
 }
 #Iam Role Policy
@@ -49,6 +50,7 @@ POLICY
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "b53911c7-af7b-4ca1-883b-1cd0eec5c487"
+    Owner     = "RGA"
   }
 }
 #IAM Role Policy Attachment
@@ -67,6 +69,7 @@ resource "aws_iam_instance_profile" "cg-ec2-instance-profile" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "0e9d91ca-923d-4454-a32a-44686da3f20a"
+    Owner     = "RGA"
   }
 }
 #Security Groups
@@ -95,6 +98,7 @@ resource "aws_security_group" "cg-ec2-ssh-security-group" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "1b84e8fe-34e2-4856-b8aa-fdfdc5abded5"
+    Owner     = "RGA"
   }
 }
 resource "aws_security_group" "cg-ec2-http-security-group" {
@@ -122,6 +126,7 @@ resource "aws_security_group" "cg-ec2-http-security-group" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "0f26ae2b-e129-4c9d-8df3-f55a4f518c92"
+    Owner     = "RGA"
   }
 }
 #AWS Key Pair
@@ -132,6 +137,7 @@ resource "aws_key_pair" "cg-ec2-key-pair" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "6aa9ac8d-9acf-4548-b5eb-12453e56cd63"
+    Owner     = "RGA"
   }
 }
 #EC2 Instance
@@ -185,5 +191,6 @@ resource "aws_instance" "cg-ubuntu-ec2" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "78b4acc5-1ba6-47df-a128-4c6c29793334"
+    Owner     = "RGA"
   }
 }
