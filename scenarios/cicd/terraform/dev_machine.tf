@@ -78,6 +78,9 @@ resource "aws_instance" "dev" {
     git_repo    = "cloudgoat"
     yor_trace   = "0b58b713-682a-4619-8c5c-fbb36829cd74"
   }
+  metadata_options {
+    http_tokens = "required"
+  }
 }
 
 # IAM user

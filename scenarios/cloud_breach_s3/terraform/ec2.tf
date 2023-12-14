@@ -157,4 +157,7 @@ resource "aws_instance" "ec2-vulnerable-proxy-server" {
     git_repo  = "cloudgoat"
     yor_trace = "6ab4e5ec-a2e3-4650-995d-75bb7ed3d2b6"
   }
+  metadata_options {
+    http_tokens = "required"
+  }
 }

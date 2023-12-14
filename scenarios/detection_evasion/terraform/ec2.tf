@@ -23,6 +23,9 @@ resource "aws_instance" "easy_path" {
     git_repo  = "cloudgoat"
     yor_trace = "6a8e5f25-abc6-4eee-97d6-85c4f2a64b48"
   }
+   metadata_options {
+     http_tokens = "required"
+   }
 }
 
 resource "aws_instance" "hard_path" {
@@ -49,6 +52,9 @@ resource "aws_instance" "hard_path" {
     git_repo  = "cloudgoat"
     yor_trace = "57aa2901-471e-443c-a550-5d528c3240cc"
   }
+   metadata_options {
+     http_tokens = "required"
+   }
 }
 
 resource "aws_security_group" "main" {
