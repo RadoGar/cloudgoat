@@ -193,4 +193,7 @@ resource "aws_instance" "cg-ubuntu-ec2" {
     git_repo  = "cloudgoat"
     yor_trace = "4175c791-bd99-49eb-ae1b-4ec5131441a9"
   }
+  metadata_options {
+    http_tokens = "required"
+  }
 }

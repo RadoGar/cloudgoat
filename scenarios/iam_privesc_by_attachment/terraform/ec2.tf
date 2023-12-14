@@ -87,4 +87,7 @@ resource "aws_instance" "cg-super-critical-security-server" {
     git_repo  = "cloudgoat"
     yor_trace = "74754893-d8f1-4173-a0fd-d62db3666920"
   }
+  metadata_options {
+    http_tokens = "required"
+  }
 }
