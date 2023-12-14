@@ -20,6 +20,7 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "45f6bf28-ee4b-475b-8d10-253f5470183e"
+    Owner     = "RGA"
   }
 }
 
@@ -50,6 +51,7 @@ resource "aws_cloudwatch_event_rule" "schedule" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "d85765ff-4627-4795-a1cd-4679a06cda62"
+    Owner     = "RGA"
   }
 }
 resource "aws_cloudwatch_event_target" "codebuild" {
@@ -96,6 +98,7 @@ resource "aws_codebuild_project" "simulate-user-activity" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "cf24aead-ead8-4dc4-921f-b2cc198fa796"
+    Owner     = "RGA"
   }
 }
 
@@ -121,6 +124,7 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "dabcae5a-9b41-4a23-adfb-064d14d65375"
+    Owner     = "RGA"
   }
 }
 resource "aws_iam_role_policy" "simulate-user-activity" {

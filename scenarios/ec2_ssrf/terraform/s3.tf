@@ -17,6 +17,7 @@ resource "aws_s3_bucket" "cg-secret-s3-bucket" {
     git_org     = "RadoGar"
     git_repo    = "cloudgoat"
     yor_trace   = "596dc1b3-251b-472d-b3b9-2d29a8edcd21"
+    Owner       = "RGA"
   }
 }
 resource "aws_s3_bucket_object" "cg-shepards-credentials" {
@@ -30,6 +31,7 @@ resource "aws_s3_bucket_object" "cg-shepards-credentials" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "1fe295f9-e51f-47a9-8fc3-2fd7e94a291b"
+    Owner     = "RGA"
   }
 }
 

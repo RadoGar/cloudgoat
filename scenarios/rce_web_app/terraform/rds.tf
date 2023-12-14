@@ -29,6 +29,7 @@ resource "aws_security_group" "cg-rds-security-group" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "4572e5a5-b6c6-4d17-8323-78b2797e2486"
+    Owner     = "RGA"
   }
 }
 #RDS Subnet Group
@@ -46,6 +47,7 @@ resource "aws_db_subnet_group" "cg-rds-subnet-group" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "dccdc829-b34f-46d2-92bc-9c2815a1dfc5"
+    Owner     = "RGA"
   }
 }
 #RDS PostgreSQL Instance
@@ -76,5 +78,6 @@ resource "aws_db_instance" "cg-psql-rds" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "501c07c4-1c67-4497-b7c0-a128f05ad9ab"
+    Owner     = "RGA"
   }
 }

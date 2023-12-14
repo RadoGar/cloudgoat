@@ -6,6 +6,7 @@ resource "aws_iam_user" "bilbo" {
     git_org            = "RadoGar"
     git_repo           = "cloudgoat"
     yor_trace          = "acef48cf-ce26-48a2-a4b7-7ca3d95a54fa"
+    Owner              = "RGA"
   }
   provisioner "local-exec" {
     when    = destroy
@@ -104,6 +105,7 @@ resource "aws_iam_role" "cg-lambda-invoker" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "5f510f4e-5c38-45a8-bdfa-1211892180a6"
+    Owner     = "RGA"
   }
 }
 

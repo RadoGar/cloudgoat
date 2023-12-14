@@ -4,6 +4,7 @@ resource "aws_efs_file_system" "admin-backup" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "5ed71abc-f70b-4767-b789-83f6fad5bc77"
+    Owner     = "RGA"
   }
 }
 
@@ -35,5 +36,6 @@ resource "aws_efs_access_point" "admin_access_point" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "8a45c340-5559-4fdd-8df8-4a19a784cc5e"
+    Owner     = "RGA"
   }
 }

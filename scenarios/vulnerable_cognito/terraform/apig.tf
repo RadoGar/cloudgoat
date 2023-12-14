@@ -36,6 +36,7 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "9466a446-10f1-47e8-9497-3461c5503d41"
+    Owner     = "RGA"
   }
 }
 
@@ -63,6 +64,7 @@ resource "aws_iam_role" "s3_api_gateyway_role" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "39d20380-b5d5-48ca-a815-cb57d4c47f66"
+    Owner     = "RGA"
   }
 }
 
@@ -79,6 +81,7 @@ resource "aws_api_gateway_rest_api" "MyS3" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "1bee0039-1fe8-4f85-a133-dd13498ca869"
+    Owner     = "RGA"
   }
 }
 
@@ -336,6 +339,7 @@ resource "aws_api_gateway_stage" "S3APIStage" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "1932a404-2784-4d7a-8bae-cea6fa2ed724"
+    Owner     = "RGA"
   }
 }
 

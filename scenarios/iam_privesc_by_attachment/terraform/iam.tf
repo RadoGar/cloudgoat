@@ -8,6 +8,7 @@ resource "aws_iam_user" "cg-kerrigan" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "d388d9e7-e85b-4579-bb9c-b3d42ff5fc93"
+    Owner     = "RGA"
   }
 }
 resource "aws_iam_access_key" "cg-kerrigan" {
@@ -57,6 +58,7 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "6f39eb53-37a3-4039-bf96-959477f2e612"
+    Owner     = "RGA"
   }
 }
 resource "aws_iam_user_policy_attachment" "cg-kerrigan-attachment" {
@@ -87,6 +89,7 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "16ff0580-aeae-4b84-ab96-74cd181402cc"
+    Owner     = "RGA"
   }
 }
 # IAM Role for EC2 Meek
@@ -113,6 +116,7 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "7af97d96-08ca-4f2f-8f5f-26cf0ec67bed"
+    Owner     = "RGA"
   }
 }
 #IAM Policy for EC2 Mighty
@@ -137,6 +141,7 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "97199bd5-fcb8-4c9c-9044-008e4ea473d9"
+    Owner     = "RGA"
   }
 }
 #IAM Policy for EC2 meek
@@ -161,6 +166,7 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "10d2dd48-c007-4273-aa0c-2fe07a511eb1"
+    Owner     = "RGA"
   }
 }
 #IAM Role Policy Attachment for EC2 Mighty
@@ -181,5 +187,6 @@ resource "aws_iam_instance_profile" "cg-ec2-meek-instance-profile" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "bd93e6a9-8c6d-493c-9385-65ab5c92f573"
+    Owner     = "RGA"
   }
 }

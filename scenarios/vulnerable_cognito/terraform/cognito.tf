@@ -70,6 +70,7 @@ resource "aws_cognito_user_pool" "ctf_pool" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "65f7ed94-ddc9-4ced-8a63-5e7483d21d52"
+    Owner     = "RGA"
   }
 }
 
@@ -119,6 +120,7 @@ resource "aws_cognito_identity_pool" "main" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "16ba8944-87e7-47f5-8e6a-13e407e664ce"
+    Owner     = "RGA"
   }
 }
 
@@ -152,6 +154,7 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "4447118b-6c40-4a58-98d3-b52158c402ca"
+    Owner     = "RGA"
   }
 }
 

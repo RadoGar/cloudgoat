@@ -56,6 +56,7 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "caf0ced3-8c6f-4f83-9b48-51e0158a2ac9"
+    Owner     = "RGA"
   }
 }
 
@@ -77,6 +78,7 @@ resource "aws_lambda_function" "policy_applier_lambda1" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "f26e2d98-233e-400b-9d4f-bf3979a1958f"
+    Owner     = "RGA"
   }
 }
 

@@ -4,6 +4,7 @@ resource "aws_ecs_cluster" "ecs_cluster" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "21f119b7-1ae1-4893-9566-c5f6d11d4047"
+    Owner     = "RGA"
   }
 }
 
@@ -30,6 +31,7 @@ resource "aws_ecs_task_definition" "vault" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "81f8d2c0-43ab-401f-86dd-ca566d084160"
+    Owner     = "RGA"
   }
 }
 
@@ -51,6 +53,7 @@ resource "aws_ecs_task_definition" "privd" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "c36d7274-971f-4608-9e16-c02edc404411"
+    Owner     = "RGA"
   }
 }
 
@@ -91,6 +94,7 @@ resource "aws_ecs_task_definition" "vulnsite" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "2c9ce670-4547-444c-8482-42691b5f9b01"
+    Owner     = "RGA"
   }
 }
 
@@ -109,6 +113,7 @@ resource "aws_ecs_service" "vulnsite" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "dc4fcf36-34e8-4293-bb4d-e9ee1bbd1103"
+    Owner     = "RGA"
   }
 }
 
@@ -123,6 +128,7 @@ resource "aws_ecs_service" "privd" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "9409fec9-18fb-48fc-b7ee-56d75d209754"
+    Owner     = "RGA"
   }
 }
 
@@ -162,5 +168,6 @@ resource "aws_ecs_service" "vault" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "54b01cd9-e904-415a-8194-282f86e29786"
+    Owner     = "RGA"
   }
 }
