@@ -20,6 +20,8 @@ resource "aws_network_interface" "dev" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "948784c7-612e-4aba-8e52-29d75be3f43f"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_iam_role" "dev-instance" {
@@ -45,6 +47,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "92f34cf6-d997-4acd-b25c-ec34e33d1eea"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_iam_role_policy_attachment" "dev-instance-policy" {
@@ -58,6 +62,8 @@ resource "aws_iam_instance_profile" "dev" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "feabf884-c00a-402a-8e4f-c24d5d2aabf6"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "tls_private_key" "ssh_key" {
@@ -77,6 +83,8 @@ resource "aws_instance" "dev" {
     git_org     = "RadoGar"
     git_repo    = "cloudgoat"
     yor_trace   = "0b58b713-682a-4619-8c5c-fbb36829cd74"
+    Owner       = "RGA"
+    PC          = "warsztaty"
   }
 }
 
@@ -87,6 +95,8 @@ resource "aws_iam_user" "readonly_user" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "29158ad3-3187-4dfb-8804-18c024ec0a1a"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_iam_user_ssh_key" "readonly_user" {

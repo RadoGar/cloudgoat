@@ -20,6 +20,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "a28f4084-21c2-4105-b3fe-d68911ad92b5"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -46,6 +48,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "7543c66f-cb89-4b38-b25c-09dc7f72882a"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -79,6 +83,8 @@ resource "aws_lambda_function" "test_lambda" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "1943f495-b92e-4528-a951-67c8cb53fbdd"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 

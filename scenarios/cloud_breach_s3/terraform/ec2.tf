@@ -23,6 +23,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "ea6f9a99-51ed-4311-9f8d-33a0ccb1fdc1"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -40,6 +42,8 @@ resource "aws_iam_instance_profile" "cg-ec2-instance-profile" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "b268b075-646e-4392-ac54-802b90533a77"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -69,6 +73,8 @@ resource "aws_security_group" "cg-ec2-ssh-security-group" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "208f31b5-ec78-4270-a920-d21936ff522b"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_security_group" "cg-ec2-http-security-group" {
@@ -96,6 +102,8 @@ resource "aws_security_group" "cg-ec2-http-security-group" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "4b8c43e3-ff73-4942-822c-11ca2df9f5a2"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #AWS Key Pair
@@ -106,6 +114,8 @@ resource "aws_key_pair" "cg-ec2-key-pair" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "920fc902-add3-48c8-ad15-5db3f1fca9b7"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #EC2 Instance
@@ -156,5 +166,7 @@ resource "aws_instance" "ec2-vulnerable-proxy-server" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "6ab4e5ec-a2e3-4650-995d-75bb7ed3d2b6"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }

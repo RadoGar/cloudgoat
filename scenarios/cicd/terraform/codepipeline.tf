@@ -13,6 +13,8 @@ resource "aws_s3_bucket" "codepipeline_bucket" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "462be409-ec8e-40d3-a3c2-6364e35b1093"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -37,6 +39,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "8ece4751-4dd9-4c18-9d8b-17220d617074"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -152,5 +156,7 @@ resource "aws_codepipeline" "codepipeline" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "413cef17-0548-45aa-9378-85075b600eed"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }

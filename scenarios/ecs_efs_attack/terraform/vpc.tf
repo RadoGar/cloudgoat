@@ -8,6 +8,7 @@ resource "aws_vpc" "cg-vpc" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "6c08a16e-5d90-4f06-8c65-a3228a087e47"
+    Owner     = "RGA"
   }
 }
 #Internet Gateway
@@ -20,6 +21,8 @@ resource "aws_internet_gateway" "cg-internet-gateway" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "d3a1b883-3cd2-412d-a7bd-b1cbb5c58fb6"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #Public Subnets
@@ -34,6 +37,8 @@ resource "aws_subnet" "cg-public-subnet-1" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "fe3af6d5-424f-49e9-8faa-faf71fa2ef97"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_subnet" "cg-public-subnet-2" {
@@ -47,6 +52,8 @@ resource "aws_subnet" "cg-public-subnet-2" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "8e1bae3a-9a3d-48de-b184-c2a9e4b36d86"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #Public Subnet Routing Table
@@ -63,6 +70,8 @@ resource "aws_route_table" "cg-public-subnet-route-table" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "858426f9-1d72-4f02-8e6d-53865284d751"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #Public Subnets Routing Associations

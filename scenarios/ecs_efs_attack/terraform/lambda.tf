@@ -46,6 +46,8 @@ resource "aws_lambda_function" "efs_upload" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "54ee9138-67b9-40aa-96b8-0d0785bf8c30"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -63,6 +65,8 @@ resource "aws_cloudwatch_event_rule" "cg_insert_file_every_three_minutes" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "f6689d77-0aae-44eb-97a7-80eeca2fbe0c"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 

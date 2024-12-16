@@ -7,6 +7,8 @@ resource "aws_iam_user" "r_waterhouse" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "068d95a9-f764-4fad-974b-888c6fa90e19"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -22,6 +24,8 @@ resource "aws_iam_user" "canarytoken_user" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "4cc24194-7065-4fca-84cf-2f33da672e54"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -37,6 +41,8 @@ resource "aws_iam_user" "spacecrab_user" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "90954d22-587d-4679-8929-e9b69a98fdf6"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -52,6 +58,8 @@ resource "aws_iam_user" "spacesiren_user" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "1fc5cd84-ffae-4aec-a584-e2a8381a0de2"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -116,6 +124,8 @@ resource "aws_iam_instance_profile" "ec2_instance_profile_easy_path" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "15a0e6ce-4739-46b3-a916-d27e46d227d0"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -127,6 +137,8 @@ resource "aws_iam_role" "ec2_instance_profile_role_easy_path" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "29bd593e-dc62-4d12-afb4-d27da5223c19"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
   assume_role_policy = <<EOF
 {
@@ -198,6 +210,8 @@ resource "aws_iam_instance_profile" "ec2_instance_profile_hard_path" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "bb9af282-5674-4543-938c-36af74561327"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -209,6 +223,8 @@ resource "aws_iam_role" "ec2_instance_profile_role_hard_path" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "e4e268bc-91ff-4a52-bf86-a0c90a7b54dc"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
   assume_role_policy = <<EOF
 {

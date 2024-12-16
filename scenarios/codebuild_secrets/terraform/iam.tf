@@ -7,6 +7,8 @@ resource "aws_iam_user" "cg-calrissian" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "53b61566-5d80-466b-adfb-df897ad4d086"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_iam_access_key" "cg-calrissian" {
@@ -21,6 +23,8 @@ resource "aws_iam_user" "cg-solo" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "d58a535a-4aab-496f-b8f0-200d4a835d76"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_iam_access_key" "cg-solo" {
@@ -61,6 +65,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "ce83da3e-41b7-4281-b5ef-16cfa63145d9"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_iam_policy" "cg-solo-policy" {
@@ -94,6 +100,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "56d981c1-8062-4122-989b-308f0bf70836"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #User Policy Attachments

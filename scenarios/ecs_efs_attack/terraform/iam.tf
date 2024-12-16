@@ -25,6 +25,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "f2b694d3-295a-4957-96e6-240d034d151e"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -55,6 +57,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "1cd2cf9a-ee7e-41f4-af3f-5cbc74202bd4"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -82,6 +86,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "c16eed69-fad1-4891-82e1-867a08110ea4"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -119,6 +125,8 @@ POLICY
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "e6a8bc0b-3a25-4066-ab04-a33665e34f8e"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -144,6 +152,8 @@ POLICY
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "32245241-d428-421a-b414-25e2d6088dd3"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -177,6 +187,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "c6f3ba32-20c1-4ad6-836a-92bb167b56e6"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #Iam Role Policy
@@ -223,6 +235,8 @@ POLICY
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "628e368c-da22-439d-8e0a-95e9e08e094c"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 

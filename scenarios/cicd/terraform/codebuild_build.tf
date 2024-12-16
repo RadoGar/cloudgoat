@@ -26,6 +26,8 @@ resource "aws_codebuild_project" "build-docker-image" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "a3c3052e-0708-4b4f-a7ef-76ef84f034cc"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -51,6 +53,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "e39158f6-942f-45c4-b9f2-ff4dc6250da0"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 

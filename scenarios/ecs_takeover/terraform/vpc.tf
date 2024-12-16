@@ -8,6 +8,8 @@ resource "aws_vpc" "vpc" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "fad82cd4-8768-4b44-be83-2351c66c6de4"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -19,6 +21,8 @@ resource "aws_internet_gateway" "internet_gateway" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "b8176822-3a6e-4ed8-aa3f-b000c938873a"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -32,6 +36,8 @@ resource "aws_subnet" "public" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "1aee1d50-051d-4569-b528-e0174fc528b8"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -48,6 +54,8 @@ resource "aws_route_table" "public" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "22f9cb40-ba8a-45ff-a1b7-c20d0a36513a"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -86,5 +94,7 @@ resource "aws_security_group" "ecs_sg" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "673328c5-4674-426c-84b3-784ffdeaebd1"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }

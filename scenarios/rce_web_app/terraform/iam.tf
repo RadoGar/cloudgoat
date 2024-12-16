@@ -8,6 +8,8 @@ resource "aws_iam_user" "cg-lara" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "0db53abe-84cc-44e5-9c34-1c1d306fda0d"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_iam_access_key" "cg-lara" {
@@ -22,6 +24,8 @@ resource "aws_iam_user" "cg-mcduck" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "23180e35-276d-4aa3-acbb-9b20acc6b0ed"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_iam_access_key" "cg-mcduck" {
@@ -76,6 +80,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "f1e22e16-0a21-4c47-b1fa-d3fed0ca0ff4"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_iam_policy" "cg-mcduck-policy" {
@@ -124,6 +130,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "2ea4978d-0277-41e4-beab-5cf867c69f36"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #IAM User Policy Attachments

@@ -28,6 +28,8 @@ resource "aws_instance" "vulnsite" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "32f5c077-34ca-44f4-8b10-4f526e048311"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -45,5 +47,7 @@ resource "aws_instance" "vault" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "b02d6bcc-cd19-47ca-a366-211090ce9117"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }

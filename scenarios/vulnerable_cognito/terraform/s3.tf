@@ -10,6 +10,8 @@ resource "aws_s3_bucket" "cognito_s3" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "e7a1ddc3-45a8-4218-9228-5ed637339626"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -65,6 +67,8 @@ resource "aws_s3_bucket_object" "dist" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "9512c390-0b66-493a-9e43-50675cf98a90"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -83,6 +87,8 @@ resource "aws_s3_bucket_object" "html" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "5fc0f27b-55d4-4ee9-83e3-a357c4d8c405"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 

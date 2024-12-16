@@ -8,6 +8,8 @@ resource "aws_vpc" "main" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "8ed9ce25-c821-474e-9c77-5bda9f6f5d27"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -20,6 +22,8 @@ resource "aws_subnet" "main" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "e5fe6b0f-0c0d-4e20-9125-a61d4a03b0cf"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -39,6 +43,8 @@ resource "aws_vpc_endpoint" "sts" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "11ef7c30-917c-4ce5-b819-bc3e165d6fb9"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -57,6 +63,8 @@ resource "aws_vpc_endpoint" "ssm" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "5b673763-2042-4670-a73c-56d650d94684"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -75,6 +83,8 @@ resource "aws_vpc_endpoint" "ec2messages" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "ae8035cb-2c67-48ef-99d8-e1e6ef874f7e"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -108,6 +118,8 @@ resource "aws_vpc_endpoint" "ssmmessages" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "fec5c42c-cb07-483f-b44b-58188a34dd67"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -126,5 +138,7 @@ resource "aws_vpc_endpoint" "logs" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "1544dc1b-1eba-4f42-b969-c5a6a4e83a53"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }

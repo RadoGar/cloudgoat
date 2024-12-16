@@ -8,6 +8,8 @@ resource "aws_iam_user" "cg-solus" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "7f14dc1f-f076-4047-b8ac-25ad62ae35b7"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_iam_access_key" "cg-solus" {
@@ -22,6 +24,8 @@ resource "aws_iam_user" "cg-wrex" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "0427d1e1-7c6b-4700-99d8-e499f0dccfde"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_iam_access_key" "cg-wrex" {
@@ -36,6 +40,8 @@ resource "aws_iam_user" "cg-shepard" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "8c0af8be-dfce-4ac2-822e-3fbb57d50950"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_iam_access_key" "cg-shepard" {
@@ -65,6 +71,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "2a8d18ce-fa09-478d-ae33-c79445efae38"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_iam_policy" "cg-wrex-policy" {
@@ -89,6 +97,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "845a910c-c7bf-4422-9328-30cf854e219e"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_iam_policy" "cg-shepard-policy" {
@@ -115,6 +125,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "6dc2e8f1-0984-4775-86b3-d093fd94a7b6"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #User Policy Attachments
