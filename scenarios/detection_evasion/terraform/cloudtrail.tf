@@ -33,6 +33,8 @@ resource "aws_iam_role" "cloudtrail_role" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "335e03d7-5a39-4331-bd60-e74b313816d6"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -53,6 +55,8 @@ resource "aws_cloudtrail" "cloudgoat_trail" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "7bb9c6cc-734d-4ffc-aab0-9a9124bc7c16"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -63,6 +67,8 @@ resource "aws_s3_bucket" "cloudtrail_logs" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "deeac0da-279d-4b63-8a5f-186ef65bd000"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 

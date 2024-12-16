@@ -35,6 +35,8 @@ resource "aws_s3_bucket" "cg-logs-s3-bucket" {
     git_org     = "RadoGar"
     git_repo    = "cloudgoat"
     yor_trace   = "dcae2017-4c50-46e7-a767-51757c085b75"
+    Owner       = "RGA"
+    PC          = "warsztaty"
   }
 }
 #Secret S3 Bucket
@@ -49,6 +51,8 @@ resource "aws_s3_bucket" "cg-secret-s3-bucket" {
     git_org     = "RadoGar"
     git_repo    = "cloudgoat"
     yor_trace   = "eae8f829-61d1-4a6d-a089-1cdade528240"
+    Owner       = "RGA"
+    PC          = "warsztaty"
   }
 }
 #Keystore S3 Bucket
@@ -63,6 +67,8 @@ resource "aws_s3_bucket" "cg-keystore-s3-bucket" {
     git_org     = "RadoGar"
     git_repo    = "cloudgoat"
     yor_trace   = "dec5f243-f0c6-40e8-b293-fc9ab4d6da54"
+    Owner       = "RGA"
+    PC          = "warsztaty"
   }
 }
 
@@ -78,6 +84,8 @@ resource "aws_s3_bucket_object" "cg-lb-log-file" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "3dbb000b-2cd1-4b8d-a1d4-f1b3b6f5cd36"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_s3_bucket_object" "cg-db-credentials-file" {
@@ -91,6 +99,8 @@ resource "aws_s3_bucket_object" "cg-db-credentials-file" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "7ba3cc6b-5630-49ed-828a-8b6a8ed6a631"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_s3_bucket_object" "cg-ssh-private-key-file" {
@@ -104,6 +114,8 @@ resource "aws_s3_bucket_object" "cg-ssh-private-key-file" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "99b6278e-6487-423c-aece-82b07e891e89"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_s3_bucket_object" "cg-ssh-public-key-file" {
@@ -117,6 +129,8 @@ resource "aws_s3_bucket_object" "cg-ssh-public-key-file" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "3586f3e5-3a45-4523-bd6f-b7df7f2aa868"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 

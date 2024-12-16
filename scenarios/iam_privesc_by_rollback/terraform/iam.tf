@@ -8,6 +8,8 @@ resource "aws_iam_user" "cg-raynor" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "8f7e9c7e-4b1e-45ab-8a51-8a81ac141688"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -24,6 +26,8 @@ resource "aws_iam_policy" "cg-raynor-policy" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "12e798ce-982f-4c35-81eb-5bd5d5b52a0b"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 

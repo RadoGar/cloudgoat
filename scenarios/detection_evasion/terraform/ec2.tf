@@ -22,6 +22,8 @@ resource "aws_instance" "easy_path" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "6a8e5f25-abc6-4eee-97d6-85c4f2a64b48"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -48,6 +50,8 @@ resource "aws_instance" "hard_path" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "57aa2901-471e-443c-a550-5d528c3240cc"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -76,6 +80,8 @@ resource "aws_security_group" "main" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "4b47984d-95e7-4bec-9ae1-de84b5dbd7ca"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -103,5 +109,7 @@ resource "aws_security_group" "main2" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "a1b8346f-bf19-492e-9c6f-3dad4f0761aa"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }

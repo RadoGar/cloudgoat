@@ -5,6 +5,8 @@ resource "aws_apigatewayv2_api" "apigw" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "8b6589ff-86c6-4ee4-a688-dd582eecb8d0"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -48,5 +50,7 @@ resource "aws_apigatewayv2_stage" "prod" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "44fb225a-b00c-4f0e-9b20-ec8a750b0dbb"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }

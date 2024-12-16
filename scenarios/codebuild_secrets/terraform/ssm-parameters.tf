@@ -11,6 +11,8 @@ resource "aws_ssm_parameter" "cg-ec2-public-key" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "078f2e09-a367-44f5-a109-b3ee202d8e22"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_ssm_parameter" "cg-ec2-private-key" {
@@ -25,5 +27,7 @@ resource "aws_ssm_parameter" "cg-ec2-private-key" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "fecc2163-60f0-4cc8-a8d5-58d01a42c8fc"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }

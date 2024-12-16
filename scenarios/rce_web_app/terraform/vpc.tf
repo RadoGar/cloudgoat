@@ -9,6 +9,7 @@ resource "aws_vpc" "cg-vpc" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "714c105c-2c39-4267-a36e-b39548be058c"
+    Owner     = "RGA"
   }
 }
 #Internet Gateway
@@ -21,6 +22,8 @@ resource "aws_internet_gateway" "cg-internet-gateway" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "c700952b-a3cb-4cd2-b37b-332caaddabb3"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #Public Subnets
@@ -35,6 +38,8 @@ resource "aws_subnet" "cg-public-subnet-1" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "4d87276a-4266-4505-ab59-2fa43088b17f"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_subnet" "cg-public-subnet-2" {
@@ -48,6 +53,8 @@ resource "aws_subnet" "cg-public-subnet-2" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "99404c59-9751-46a8-be91-185beca05cf9"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #Private Subnets
@@ -62,6 +69,8 @@ resource "aws_subnet" "cg-private-subnet-1" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "aaf5e6e7-ef84-4acf-aa56-401185b33895"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_subnet" "cg-private-subnet-2" {
@@ -75,6 +84,8 @@ resource "aws_subnet" "cg-private-subnet-2" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "7ca8c618-8620-439f-aa81-136d1dfb188a"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #Public Subnet Routing Table
@@ -91,6 +102,8 @@ resource "aws_route_table" "cg-public-subnet-route-table" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "ba1faa5a-0d35-42f3-96e7-40aa01eed237"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #Private Subnet Routing Table
@@ -103,6 +116,8 @@ resource "aws_route_table" "cg-private-subnet-route-table" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "83b9b190-9820-4a77-9bd3-4c2da17f05e7"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #Public Subnets Routing Associations

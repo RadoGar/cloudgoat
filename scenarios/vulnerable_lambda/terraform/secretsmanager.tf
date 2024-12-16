@@ -4,6 +4,8 @@ resource "aws_secretsmanager_secret" "final_flag" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "ecfe3240-c199-42e2-a961-2841d8e92bdf"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 

@@ -4,6 +4,8 @@ resource "aws_iam_user" "initial" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "195057a5-761a-4a84-ba18-eec2325962e7"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_iam_user_policy" "initial" {

@@ -4,6 +4,8 @@ resource "aws_ecs_cluster" "cg-cluster" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "db59612d-f27d-414d-9893-9b081fb916fb"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -47,6 +49,8 @@ DEFINITION
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "df762565-a323-4b2b-98db-65e8ade01ad3"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -73,6 +77,8 @@ resource "aws_ecs_service" "cg-webapp" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "8116b908-df93-45bd-9949-ad215e6f24cd"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -111,5 +117,7 @@ resource "aws_security_group" "cg-ecs-http-security-group" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "0a17e82b-807e-4cea-9003-2a39e05a01b7"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }

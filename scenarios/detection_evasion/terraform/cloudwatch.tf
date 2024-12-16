@@ -5,6 +5,8 @@ resource "aws_cloudwatch_log_group" "main" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "f0c47d4b-e454-48d6-8ff8-3efe5f08f4c3"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -42,6 +44,8 @@ resource "aws_cloudwatch_metric_alarm" "honeytoken_alarm" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "e82e4118-85a0-42ef-9e18-0cd11176da9c"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -79,5 +83,7 @@ resource "aws_cloudwatch_metric_alarm" "instance_profile_alarm" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "c53298f6-7b0e-4526-8f58-ac536775e639"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }

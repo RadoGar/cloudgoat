@@ -24,6 +24,8 @@ resource "aws_security_group" "cg-ec2-ssh-security-group" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "74dbd8a7-f5eb-41cc-aa64-d26ed1e0b3fa"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 resource "aws_security_group" "cg-ec2-http-https-security-group" {
@@ -57,6 +59,8 @@ resource "aws_security_group" "cg-ec2-http-https-security-group" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "f2eb489c-5d41-49d3-8ab8-f70040e2fb19"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #EC2 Instance
@@ -86,5 +90,7 @@ resource "aws_instance" "cg-super-critical-security-server" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "74754893-d8f1-4173-a0fd-d62db3666920"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }

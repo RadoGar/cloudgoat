@@ -4,6 +4,8 @@ resource "aws_codecommit_repository" "code" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "c56a3db5-23be-4c59-81c9-3894b2a16651"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -65,6 +67,8 @@ resource "aws_ecr_repository" "app" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "a46ee02e-6c58-4bba-b688-8cd07673930d"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
   image_scanning_configuration {
     scan_on_push = true

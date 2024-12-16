@@ -37,6 +37,8 @@ resource "aws_iam_instance_profile" "cg-ec2-ruse-instance-profile" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "1f764a8b-0f10-4dbe-a40e-c346cab2c700"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -47,6 +49,8 @@ resource "aws_iam_instance_profile" "cg-efs-admin-instance-profile" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "e9294739-66b8-4c5a-af16-61ddf9398a5d"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -76,6 +80,8 @@ resource "aws_security_group" "cg-ec2-ssh-security-group" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "016b80a9-4fab-41fa-9849-1c0a23056b64"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -107,6 +113,8 @@ resource "aws_security_group" "cg-ec2-efs-security-group" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "04868d9a-aa82-4cff-a199-7ee058d609a1"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -138,6 +146,8 @@ resource "aws_security_group" "cg-ec2-http-listener-security-group" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "a255f2bb-a935-47ef-aa0c-00cf2cf655b2"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -149,6 +159,8 @@ resource "aws_key_pair" "cg-ec2-key-pair" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "d83f972a-30ca-4b70-810a-159c308d3d22"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 
@@ -198,6 +210,8 @@ resource "aws_instance" "cg-ruse-ec2" {
     git_org      = "RadoGar"
     git_repo     = "cloudgoat"
     yor_trace    = "281e26b5-1c11-474c-a4d7-8cb361e97bed"
+    Owner        = "RGA"
+    PC           = "warsztaty"
   }
 }
 
@@ -247,8 +261,10 @@ resource "aws_instance" "cg-dev-ec2" {
     git_org      = "RadoGar"
     git_repo     = "cloudgoat"
     yor_trace    = "35058428-2ace-4e7c-be29-c9bc726a5a26"
+    Owner        = "RGA"
+    PC           = "warsztaty"
   }
-   metadata_options {
-     http_tokens = "required"
-   }
+  metadata_options {
+    http_tokens = "required"
+  }
 }

@@ -22,6 +22,8 @@ EOF
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "ca8a55f1-711b-42dd-a522-e6e768d04679"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
 #Inline Policy for AWS CodeBuild Project IAM Role
@@ -94,5 +96,7 @@ resource "aws_codebuild_project" "cg-codebuild-project" {
     git_org   = "RadoGar"
     git_repo  = "cloudgoat"
     yor_trace = "b53435f4-aeb5-4c4a-9a53-23e9caa80b03"
+    Owner     = "RGA"
+    PC        = "warsztaty"
   }
 }
